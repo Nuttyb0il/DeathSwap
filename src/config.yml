@@ -1,0 +1,14 @@
+prepGod: true           # Godmode first 3 minutes
+prepTime: 3             # 3 minutes of godmode
+prepSpeed: true         # Speed effet when game starts
+speedTime: 200          # Time of speed effect in ticks (20 * X) where X = seconds
+minSeconds: 60          # Minimum time (in seconds) to swap
+maxSeconds: 240         # Maximum time (in seconds) to swap
+randomTp: true          # TP both players randomly before the game starts
+deathSound: true        # Plays a Wither sound when a player dies when the game is running.
+
+# This plugin has been coded in exactly 23 minutes and 10 seconds (timer stopped before writing this line)
+# Except some bugs, normally everything is fine, and bugs have been patched before you see this on GitHub
+# However, if you still encounter bugs do not hesitate to create an issue on the repository 'https://www.github.com/Nuttyb0il/DeathSwap'
+# If you create an issue, copy and paste StackTrace and how the bug happened (circumstances etc)
+# I'll do my best to fix it ASAP

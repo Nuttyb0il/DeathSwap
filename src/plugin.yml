@@ -1,0 +1,12 @@
+name: DeathSwap
+version: 1.0
+author: Nutty1337
+main: xyz.nutty1337.swap.Main
+api-version: 1.12.2
+commands:
+  startswap:
+    description: Starts the DeathSwap
+    permission: swap.start
+  stopswap:
+    description: Stop the DeathSwap
+    permission: swap.stop
