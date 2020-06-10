@@ -17,4 +17,18 @@ public class Main extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new DeathEvent(), this);
     }
+    @Override
+    public void onDisable() {
+        try {
+            Main.INSTANCE.GameState = false;
+            Main.INSTANCE.InvulThread.interrupt(); // stop thread
+            Main.INSTANCE.SwapThread.interrupt(); // stop thread
+            Main.INSTANCE.InvulThread = new GodThread(); // reset thread
+            Main.INSTANCE.SwapThread = new GameThread(); // reset thread
+        }
+        catch (Exception ex) {
+
+        }
+
+    }
 }

@@ -13,13 +13,14 @@ public class GameThread extends Thread {
             try {
                 int sleeptime = RNG() * 1000;
                 Thread.sleep(sleeptime);
-                int secs = 10;
-                for (int i = 0; i < 10; i++) {
-                    Main.INSTANCE.getServer().broadcastMessage("§6Swapping in " + String.valueOf(secs) + "s");
-                    secs -= 1;
-                    Thread.sleep(1000);
+                int secs = Main.INSTANCE.getConfig().getInt("displayThreshold");
+                while (secs != 0) {
+                    if (Main.INSTANCE.getConfig().getBoolean("displayCountdown")) {
+                        Main.INSTANCE.getServer().broadcastMessage("§6Swapping in " + String.valueOf(secs) + "s");
+                        secs -= 1;
+                        Thread.sleep(1000);
+                    }
                 }
-
                 ArrayList<Player> a = new ArrayList();
                 for (Player p : Main.INSTANCE.getServer().getOnlinePlayers()) { // garbage
                     a.add(p);

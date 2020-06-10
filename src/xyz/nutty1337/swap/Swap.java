@@ -29,6 +29,7 @@ public class Swap implements CommandExecutor {
                         p.teleport(new Location(p.getWorld(), x,y,z));
                     }
                 }
+
                 sender.getServer().getWorld("world").setTime(0);
                 for (Player p : sender.getServer().getOnlinePlayers()) {
                     p.setFoodLevel(20);
@@ -41,6 +42,10 @@ public class Swap implements CommandExecutor {
                     if(Main.INSTANCE.getConfig().getBoolean("prepSpeed")) {
                         p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Main.INSTANCE.getConfig().getInt("speedTime"), 5));
                     }
+                    if(Main.INSTANCE.getConfig().getBoolean("clearInventories")) {
+                        p.getInventory().clear();
+                    }
+
                 }
                 Main.INSTANCE.SwapThread.start();
                 if(Main.INSTANCE.getConfig().getBoolean("prepGod")) {
